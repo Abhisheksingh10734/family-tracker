@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Family Color Picker</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#667eea,#764ba2);
+    }
+
+    .card{
+      width:420px;
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.2);
+    }
+
+    h1{
+      text-align:center;
+      margin-bottom:25px;
+      color:#333;
+    }
+
+    .input-group{
+      margin-bottom:25px;
+    }
+
+    label{
+      display:block;
+      margin-bottom:10px;
+      font-weight:600;
+      color:#555;
+    }
+
+    input[type="text"]{
+      width:100%;
+      padding:14px;
+      border:none;
+      border-radius:12px;
+      background:#f1f5f9;
+      font-size:16px;
+      outline:none;
+      transition:0.3s;
+    }
+
+    input[type="text"]:focus{
+      background:white;
+      border:2px solid #667eea;
+    }
+
+    .colors{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:15px;
+    }
+
+    .color-option{
+      width:45px;
+      height:45px;
+      border-radius:12px;
+      cursor:pointer;
+      border:3px solid transparent;
+      transition:0.3s;
+      position:relative;
+    }
+
+    .color-option:hover{
+      transform:scale(1.1);
+    }
+
+    input[type="radio"]{
+      display:none;
+    }
+
+    input[type="radio"]:checked + .color-option{
+      border:3px solid #111;
+      transform:scale(1.1);
+    }
+
+    .red{ background:#ef4444; }
+    .blue{ background:#3b82f6; }
+    .green{ background:#22c55e; }
+    .yellow{ background:#facc15; }
+    .purple{ background:#a855f7; }
+    .orange{ background:#f97316; }
+    .pink{ background:#ec4899; }
+    .black{ background:#111827; }
+
+    button{
+      width:100%;
+      margin-top:30px;
+      padding:15px;
+      border:none;
+      border-radius:12px;
+      background:linear-gradient(135deg,#667eea,#764ba2);
+      color:white;
+      font-size:16px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 20px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <h1>Family Member Form</h1>
+
+    <form action="/newMember" method="POST">
+
+      <div class="input-group">
+        <label>Enter Family Member Name</label>
+
+        <input 
+          type="text"
+          name="memberName"
+          placeholder="Enter name..."
+          required
+        >
+      </div>
+
+      <div class="input-group">
+        <label>Select Favorite Color</label>
+
+        <div class="colors">
+
+          <label>
+            <input type="radio" name="color" value="Red" required>
+            <div class="color-option red"></div>
+          </label>
+
+          <label>
+            <input type="radio" name="color" value="Blue">
+            <div class="color-option blue"></div>
+          </label>
+
+          <label>
+            <input type="radio" name="color" value="Green">
+            <div class="color-option green"></div>
+          </label>
+
+          <label>
+            <input type="radio" name="color" value="Yellow">
+            <div class="color-option yellow"></div>
+          </label>
+
+          <label>
+            <input type="radio" name="color" value="Purple">
+            <div class="color-option purple"></div>
+          </label>
+
+          <label>
+            <input type="radio" name="color" value="Orange">
+            <div class="color-option orange"></div>
+          </label>
+
+          <label>
+            <input type="radio" name="color" value="Pink">
+            <div class="color-option pink"></div>
+          </label>
+
+          <label>
+            <input type="radio" name="color" value="Black">
+            <div class="color-option black"></div>
+          </label>
+
+        </div>
+      </div>
+
+      <button type="submit">
+        Submit
+      </button>
+
+    </form>
+
+  </div>
+
+</body>
+</html>
